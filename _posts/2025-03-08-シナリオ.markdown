@@ -2,7 +2,7 @@
 layout: post
 title:  "3/8時点のシナリオ"
 date:   2025-03-08
-categories: "blog"
+category: "blog"
 ---
 
 ■シナリオ

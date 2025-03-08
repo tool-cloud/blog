@@ -1,61 +1,34 @@
 ---
-layout: base
+layout: default
 ---
+<div class="home-wrapper">
+  <header class="home-header">
+    <h1 class="site-title">{{ site.title | escape }}</h1>
+    <p class="site-description">{{ site.description | escape }}</p>
+  </header>
 
-<div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
-
-  {{ content }}
-
-
-  {% if site.paginate %}
-    {% assign posts = paginator.posts %}
-  {% else %}
-    {% assign posts = site.posts %}
-  {% endif %}
-
-
-  {%- if posts.size > 0 -%}
-    {%- if page.list_title -%}
-      <h2 class="post-list-heading">{{ page.list_title }}</h2>
+  <main class="home-content">
+    {%- if site.posts.size > 0 -%}
+      <h2 class="list-title">最新記事</h2>
+      <ul class="article-list">
+        {%- for post in site.posts limit:5 -%}
+        <li class="article-item">
+          <div class="article-meta">
+            <span class="article-date">
+              {{ post.date | date: "%Y.%m.%d (" }}{% assign dow = post.date | date: "%a" %}{% if dow == "Mon" %}月{% elsif dow == "Tue" %}火{% elsif dow == "Wed" %}水{% elsif dow == "Thu" %}木{% elsif dow == "Fri" %}金{% elsif dow == "Sat" %}土{% elsif dow == "Sun" %}日{% endif %})
+            </span>
+          </div>
+          <h3 class="article-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h3>
+          {%- if site.show_excerpts -%}
+            <p class="article-excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>
+          {%- endif -%}
+        </li>
+        {%- endfor -%}
+      </ul>
+    {%- else -%}
+      <p>まだ記事がありません。</p>
     {%- endif -%}
-    <ul class="post-list">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      {%- for post in posts -%}
-      <li>
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.minima.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-
-    {% if site.paginate %}
-      <div class="pager">
-        <ul class="pagination">
-        {%- if paginator.previous_page %}
-          <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-          <li><div class="current-page">{{ paginator.page }}</div></li>
-        {%- if paginator.next_page %}
-          <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-        </ul>
-      </div>
-    {%- endif %}
-
-  {%- endif -%}
-
+  </main>
 </div>

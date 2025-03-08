@@ -1,38 +1,19 @@
----
-layout: default
----
-<div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
-
-  {{ content }}
-
-  {%- if site.posts.size > 0 -%}
-    <h2 class="list-heading">{{ page.list_title | default: "記事一覧" }}</h2>
-    <ul class="article-list">
-      {%- for post in site.posts -%}
-      <li>
-        <span class="meta">
-          {{ post.date | date: "%Y.%m.%d (" }}{% assign dow = post.date | date: "%a" %}{% if dow == "Mon" %}月{% elsif dow == "Tue" %}火{% elsif dow == "Wed" %}水{% elsif dow == "Thu" %}木{% elsif dow == "Fri" %}金{% elsif dow == "Sat" %}土{% elsif dow == "Sun" %}日{% endif %})
-        </span>
-        <h3>
-          <a class="article-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-
-    <p class="feed-subscribe">
-      <a href="{{ 'feed.xml' | relative_url }}">
-        <svg class="svg-icon orange"><use xlink:href="{{ 'assets/minima-social-icons.svg#rss' | relative_url }}"></use></svg>
-        <span>購読</span>
-      </a>
-    </p>
-  {%- endif -%}
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+</head>
+<body>
+  <header>
+    <h1>カスタムトップページ</h1>
+  </header>
+  <main>
+    {{ content }}
+  </main>
+  <footer>
+    <p>フッター</p>
+  </footer>
+</body>
+</html>

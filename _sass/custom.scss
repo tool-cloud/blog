@@ -56,11 +56,12 @@
   font-size: 0.9em; /* 約14px */
   color: #333;
   text-decoration: none;
-  border-radius: 3px; /* 角を少し丸める */
+  border-radius: 3px; /* 角を丸める */
+  border: 1px solid #ddd; /* 枠線を追加 */
 }
 
 .category-box:hover {
-  background-color: #e0e0e0; /* ホバー時に少し濃く */
+  background-color: #e0e0e0;
   color: #0366d6;
 }
 

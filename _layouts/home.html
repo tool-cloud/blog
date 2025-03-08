@@ -16,7 +16,7 @@ layout: default
               <h3 class="article-title">
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
               </h3>
-              <!-- カテゴリリンクを四角枠で表示（角括弧を削除） -->
+              <!-- カテゴリリンク -->
               {%- if post.category -%}
                 <div class="article-category">
                   <a href="{{ '/category/' | append: post.category | relative_url }}" class="category-box">{{ post.category }}</a>
@@ -36,7 +36,7 @@ layout: default
       <p>まだ記事がありません。</p>
     {%- endif -%}
 
-    <!-- カテゴリリスト（オプションとして残す） -->
+    <!-- カテゴリリスト -->
     <section class="categories">
       <h2 class="category-title">カテゴリ</h2>
       <ul class="category-list">

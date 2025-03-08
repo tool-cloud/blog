@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<div class="category-wrapper">
+  <h1 class="category-title">{{ page.category }}</h1>
+  <ul class="article-list">
+    {%- for post in site.categories[page.category] -%}
+      <li class="article-item">
+        <h3 class="article-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+        <div class="article-meta">
+          <time class="article-date" datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date: "%Y.%m.%d (" }}{% assign dow = post.date | date: "%a" %}{% if dow == "Mon" %}月{% elsif dow == "Tue" %}火{% elsif dow == "Wed" %}水{% elsif dow == "Thu" %}木{% elsif dow == "Fri" %}金{% elsif dow == "Sat" %}土{% elsif dow == "Sun" %}日{% endif %})
+          </time>
+        </div>
+        <p class="article-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
+      </li>
+    {%- endfor -%}
+  </ul>
+</div>

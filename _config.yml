@@ -23,6 +23,18 @@ baseurl: "/blog" # the subpath of your site, e.g. /blog
 permalink: /:year/:month/:day/:title.html
 url: "https://tool-cloud.github.io/blog/" # the base hostname & protocol for your site, e.g. https://
 future: true  # 未来の日付の投稿を許可する場合
+sass:
+  sass_dir: _sass
+  style: compressed
+collections:
+  category:
+    output: true
+defaults:
+  - scope:
+      path: "category"
+      type: "category"
+    values:
+      layout: "category"
 twitter_username: jekyllrb
 github_username:  jekyll
 

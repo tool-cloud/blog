@@ -45,6 +45,25 @@
   text-decoration: underline;
 }
 
+.article-category {
+  margin: 5px 0;
+}
+
+.category-box {
+  display: inline-block;
+  background-color: #f5f5f5; /* 薄いグレー */
+  padding: 2px 6px;
+  font-size: 0.9em; /* 約14px */
+  color: #333;
+  text-decoration: none;
+  border-radius: 3px; /* 角を少し丸める */
+}
+
+.category-box:hover {
+  background-color: #e0e0e0; /* ホバー時に少し濃く */
+  color: #0366d6;
+}
+
 .article-meta {
   font-size: 0.9em;
   color: #888;
@@ -52,19 +71,6 @@
 
 .article-date {
   display: inline;
-}
-
-.article-category {
-  display: inline;
-}
-
-.article-category a {
-  color: #0366d6;
-  text-decoration: none;
-}
-
-.article-category a:hover {
-  text-decoration: underline;
 }
 
 .article-excerpt {

@@ -16,16 +16,16 @@ layout: default
               <h3 class="article-title">
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
               </h3>
+              <!-- カテゴリをタイトル直下に四角枠で表示 -->
+              {%- if post.category -%}
+                <div class="article-category">
+                  <a href="{{ '/category/' | append: post.category | relative_url }}" class="category-box">[{{ post.category }}]</a>
+                </div>
+              {%- endif -%}
               <div class="article-meta">
                 <time class="article-date" datetime="{{ post.date | date_to_xmlschema }}">
                   {{ post.date | date: "%Y.%m.%d (" }}{% assign dow = post.date | date: "%a" %}{% if dow == "Mon" %}月{% elsif dow == "Tue" %}火{% elsif dow == "Wed" %}水{% elsif dow == "Thu" %}木{% elsif dow == "Fri" %}金{% elsif dow == "Sat" %}土{% elsif dow == "Sun" %}日{% endif %})
                 </time>
-                <!-- カテゴリリンクを追加 -->
-                {%- if post.category -%}
-                  <span class="article-category">
-                    | <a href="{{ '/category/' | append: post.category | relative_url }}">{{ post.category }}</a>
-                  </span>
-                {%- endif -%}
               </div>
               <p class="article-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
             </li>

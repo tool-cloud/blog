@@ -19,7 +19,7 @@
 title: FI
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-baseurl: "/blog" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://tool-cloud.github.io/blog/" # the base hostname & protocol for your site, e.g. https://
 future: true  # 未来の日付の投稿を許可する場合
 twitter_username: jekyllrb

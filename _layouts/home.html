@@ -9,7 +9,7 @@ layout: default
     <!-- 最新記事リスト -->
     {%- if site.posts.size > 0 -%}
       <section class="latest-posts">
-        <h2 class="list-title"></h2>
+        <h2 class="list-title">最新記事</h2>
         <ul class="article-list">
           {%- for post in site.posts limit:5 -%}
             <li class="article-item">
@@ -20,6 +20,12 @@ layout: default
                 <time class="article-date" datetime="{{ post.date | date_to_xmlschema }}">
                   {{ post.date | date: "%Y.%m.%d (" }}{% assign dow = post.date | date: "%a" %}{% if dow == "Mon" %}月{% elsif dow == "Tue" %}火{% elsif dow == "Wed" %}水{% elsif dow == "Thu" %}木{% elsif dow == "Fri" %}金{% elsif dow == "Sat" %}土{% elsif dow == "Sun" %}日{% endif %})
                 </time>
+                <!-- カテゴリリンクを追加 -->
+                {%- if post.category -%}
+                  <span class="article-category">
+                    | <a href="{{ '/category/' | append: post.category | relative_url }}">{{ post.category }}</a>
+                  </span>
+                {%- endif -%}
               </div>
               <p class="article-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
             </li>
@@ -30,7 +36,7 @@ layout: default
       <p>まだ記事がありません。</p>
     {%- endif -%}
 
-    <!-- カテゴリリスト -->
+    <!-- カテゴリリスト（オプションとして残す） -->
     <section class="categories">
       <h2 class="category-title">カテゴリ</h2>
       <ul class="category-list">

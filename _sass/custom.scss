@@ -5,18 +5,18 @@
 }
 
 .site-title {
-  font-size: 2.5em; /* 約40px、大見出し */
+  font-size: 2.5em;
   margin: 0 0 10px;
 }
 
 .site-description {
-  font-size: 1.2em; /* 約19px */
+  font-size: 1.2em;
   color: #666;
   margin-bottom: 40px;
 }
 
 .list-title {
-  font-size: 1.8em; /* 約28px */
+  font-size: 1.8em;
   border-bottom: 2px solid #0366d6;
   padding-bottom: 10px;
   margin-bottom: 20px;
@@ -32,7 +32,7 @@
 }
 
 .article-title {
-  font-size: 1.5em; /* 約24px */
+  font-size: 1.5em;
   margin: 0 0 5px;
 }
 
@@ -45,19 +45,36 @@
   text-decoration: underline;
 }
 
-.article-date {
-  font-size: 0.9em; /* 約14px */
+.article-meta {
+  font-size: 0.9em;
   color: #888;
 }
 
+.article-date {
+  display: inline;
+}
+
+.article-category {
+  display: inline;
+}
+
+.article-category a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.article-category a:hover {
+  text-decoration: underline;
+}
+
 .article-excerpt {
-  font-size: 1em; /* 約16px */
+  font-size: 1em;
   color: #444;
   line-height: 1.6;
 }
 
 .category-title {
-  font-size: 1.8em; /* 約28px */
+  font-size: 1.8em;
   border-bottom: 2px solid #0366d6;
   padding-bottom: 10px;
   margin-bottom: 20px;
@@ -69,7 +86,7 @@
 }
 
 .category-item {
-  font-size: 1em; /* 約16px */
+  font-size: 1em;
   margin-bottom: 10px;
 }
 

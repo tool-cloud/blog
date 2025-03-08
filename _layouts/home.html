@@ -16,10 +16,10 @@ layout: default
               <h3 class="article-title">
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
               </h3>
-              <!-- カテゴリをタイトル直下に四角枠で表示 -->
+              <!-- カテゴリリンクを四角枠で表示（角括弧を削除） -->
               {%- if post.category -%}
                 <div class="article-category">
-                  <a href="{{ '/category/' | append: post.category | relative_url }}" class="category-box">[{{ post.category }}]</a>
+                  <a href="{{ '/category/' | append: post.category | relative_url }}" class="category-box">{{ post.category }}</a>
                 </div>
               {%- endif -%}
               <div class="article-meta">

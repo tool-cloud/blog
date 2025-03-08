@@ -1,4 +1,35 @@
-<!DOCTYPE html>
+---
+layout: default
+---
+<div class="home-wrapper">
+  <header class="home-header">
+    <h1 class="site-title">{{ site.title | escape }}</h1>
+    <p class="site-description">{{ site.description | escape }}</p>
+  </header>
+
+  <main class="home-content">
+    {%- if site.posts.size > 0 -%}
+      <h2 class="list-title">最新記事</h2>
+      <ul class="article-list">
+        {%- for post in site.posts limit:5 -%}
+        <li class="article-item">
+          <span class="article-date">
+            {{ post.date | date: "%Y.%m.%d (" }}{% assign dow = post.date | date: "%a" %}{% if dow == "Mon" %}月{% elsif dow == "Tue" %}火{% elsif dow == "Wed" %}水{% elsif dow == "Thu" %}木{% elsif dow == "Fri" %}金{% elsif dow == "Sat" %}土{% elsif dow == "Sun" %}日{% endif %})
+          </span>
+          <h3 class="article-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h3>
+          {%- if site.show_excerpts -%}
+            <p class="article-excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>
+          {%- endif -%}
+        </li>
+        {%- endfor -%}
+      </ul>
+    {%- else -%}
+      <p>まだ記事がありません。</p>
+    {%- endif -%}
+  </main>
+</div><!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">

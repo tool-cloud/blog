@@ -9,7 +9,7 @@ layout: default
 
   <main class="home-content">
     {%- if site.posts.size > 0 -%}
-      <h2 class="list-title"></h2>
+      <h2 class="list-title">最新記事</h2>
       <ul class="article-list">
         {%- for post in site.posts limit:5 -%}
         <li class="article-item">
@@ -19,7 +19,7 @@ layout: default
             </span>
           </div>
           <h3 class="article-title">
-            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
           </h3>
           {%- if site.show_excerpts -%}
             <p class="article-excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>

@@ -1,3 +1,91 @@
-.container { display: flex; flex-wrap: nowrap; max-width: 1200px; margin: 0 auto; padding: 20px; } 
-.main-content { flex: 2; margin-right: 20px; } 
-.sidebar { flex: 1; max-width: 300px; } 
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.main-content {
+  flex: 2;
+  margin-right: 20px;
+}
+.sidebar {
+  flex: 1;
+  max-width: 300px;
+}
+section {
+  margin-bottom: 20px;
+}
+h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.profile p {
+  font-size: 0.9em;
+  color: #666;
+}
+.search-input {
+  width: 70%;
+  padding: 5px;
+  font-size: 0.9em;
+}
+.search-button {
+  padding: 5px 10px;
+  background-color: #0366d6;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.search-button:hover {
+  background-color: #024ea4;
+}
+.ranking-list, .category-list, .link-list {
+  list-style: none;
+  padding: 0;
+}
+.ranking-list li, .category-list li, .link-list li {
+  margin-bottom: 8px;
+}
+.ranking-list a, .category-list a, .link-list a {
+  text-decoration: none;
+  color: #0366d6;
+}
+.ranking-list a:hover, .category-list a:hover, .link-list a:hover {
+  text-decoration: underline;
+}
+
+/* スマホ画面用の調整 (768px以下) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* 縦に並べる */
+    padding: 10px; /* 余白を小さく */
+  }
+  .main-content {
+    margin-right: 0; /* 右マージンを削除 */
+    margin-bottom: 20px; /* 下に余白を追加 */
+  }
+  .sidebar {
+    max-width: 100%; /* 幅をフルに */
+  }
+  .profile-img {
+    width: 80px; /* 画像を少し小さく */
+    height: 80px;
+  }
+  h3 {
+    font-size: 1em; /* 見出しを小さく */
+  }
+  .profile p, .search-input, .search-button {
+    font-size: 0.85em; /* テキストを少し小さく */
+  }
+  .search-input {
+    width: 60%; /* 入力欄を狭く */
+  }
+}

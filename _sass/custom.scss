@@ -81,3 +81,31 @@ h3 {
 .ranking-list a:hover, .category-list a:hover, .link-list a:hover {
   text-decoration: underline;
 }
+
+/* スマホ画面用の調整 (768px以下) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* 縦に並べる */
+    padding: 10px; /* 余白を小さく */
+  }
+  .main-content {
+    margin-right: 0; /* 右マージンを削除 */
+    margin-bottom: 20px; /* 下に余白を追加 */
+  }
+  .sidebar {
+    max-width: 100%; /* 幅をフルに */
+  }
+  .profile-img {
+    width: 80px; /* 画像を少し小さく */
+    height: 80px;
+  }
+  h3 {
+    font-size: 1em; /* 見出しを小さく */
+  }
+  .profile p, .search-input, .search-button {
+    font-size: 0.85em; /* テキストを少し小さく */
+  }
+  .search-input {
+    width: 60%; /* 入力欄を狭く */
+  }
+}

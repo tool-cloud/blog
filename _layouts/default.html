@@ -18,23 +18,18 @@ layout: null
 
     <!-- 右サイドバー -->
     <aside class="sidebar">
-      <!-- プロフィール欄 -->
       <section class="profile">
         <h3>プロフィール</h3>
         <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="プロフィール画像" class="profile-img">
-        <p>こんにちは！ブログ管理者の[名前]です。ここでは[簡単な自己紹介]を書きます。</p>
+        <p>こんにちは！ブログ管理者の[名前]です。</p>
       </section>
-
-      <!-- 検索欄 -->
       <section class="search">
         <h3>検索</h3>
-        <form action="/search/" method="get">
+        <form action="{{ '/search/' | relative_url }}" method="get">
           <input type="text" name="q" placeholder="キーワードを入力" class="search-input">
           <button type="submit" class="search-button">検索</button>
         </form>
       </section>
-
-      <!-- アクセスランキング -->
       <section class="ranking">
         <h3>アクセスランキング</h3>
         <ul class="ranking-list">
@@ -44,8 +39,6 @@ layout: null
           {%- endfor -%}
         </ul>
       </section>
-
-      <!-- カテゴリー -->
       <section class="categories">
         <h3>カテゴリー</h3>
         <ul class="category-list">
@@ -54,13 +47,11 @@ layout: null
           {%- endfor -%}
         </ul>
       </section>
-
-      <!-- お問い合わせとプライバシーポリシー -->
       <section class="links">
         <h3>リンク</h3>
         <ul class="link-list">
-          <li><a href="/contact/">お問い合わせ</a></li>
-          <li><a href="/privacy/">プライバシーポリシー</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}">お問い合わせ</a></li>
+          <li><a href="{{ '/privacy/' | relative_url }}">プライバシーポリシー</a></li>
         </ul>
       </section>
     </aside>

@@ -80,3 +80,15 @@ h3 {
 .ranking-list a:hover, .category-list a:hover, .link-list a:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .main-content {
+    margin-right: 0;
+  }
+  .sidebar {
+    max-width: 100%;
+  }
+}
